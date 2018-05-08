@@ -37,7 +37,6 @@ testArray.forEach(function (item, index, array) {
 // 메서드 수행 후 원본 배열
 console.log(testArray); // (4) ["aaaEDIT", "bbbEDIT", "cccEDIT", "dddEDIT"]
 
-
 // Array.map
 
 // 원본 배열
@@ -134,22 +133,3 @@ console.log(testArray); // (10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // 메서드 수행 후 리턴값은 0부터 10까지의 합
 console.log(result);    // 55
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
