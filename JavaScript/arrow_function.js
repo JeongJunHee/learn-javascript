@@ -19,7 +19,7 @@ x => x * x             // 함수 몸체가 한줄의 구문이라면 중괄호�
 };
 
 // 화살표 함수의 호출
-// 화살표 함수는 익명 함수로만 사용 가능
+// 화살표 함수는 익명 함수로만 사용 가능, 화살표 함수를 호출하기 위해서는 함수 표현식을 사용
 // ES5
 var pow = function (x) { return x * x; };
 console.log(pow(10)); // 100
@@ -27,3 +27,65 @@ console.log(pow(10)); // 100
 // ES6
 var pow = x => x * x;
 console.log(pow(10)); // 100
+
+// 또는 콜백 함수로 사용, 이 경우 일반적인 함수 표현식보다 표현이 간결
+// ES5
+var arr = [1, 2, 3];
+var pow = arr.map(function(x) {
+  return x * x;
+})
+
+console.log(pow); // [1. 4. 9]
+
+// ES6
+const arr = [1, 2, 3];
+const pow = arr.map(x => x * x);
+
+console.log(pow); // [1, 4, 9]
+
+// 화살표 함수 도입에 영향을 준 두 요소 : 짧은 함수 및 바인딩되지 않은 this
+// 짧은 함수
+var fruit = ['apple', 'banana', 'orange', 'grape'];
+
+fruit.map(function(fruit) {
+  return fruit.length;
+}); // (4) [5, 6, 6, 5]
+
+fruit.map((fruit) => {
+  return fruit.length;
+}); // (4) [5, 6, 6, 5]
+
+fruit.map(({length}) => length);  // (4) [5, 6, 6, 5]
+
+// 바인딩 되지 않은 this
+// 화살표 함수 전까지는, 모든 새로운 함수는 자신의 this를 정의
+function Person() {
+  // Person() 생성자는 'this'를 자신의 인스턴스로 정의.
+  this.age = 0;
+  console.log(this);  // Person {age: 0}
+  setInterval(function growUp() {
+    this.age++;
+    console.log(this);  // Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
+  }, 1000);
+}
+
+var p = new Person();
+
+// 화살표 함수는 전역 컨텍스트에서 실행될 때 this를 새로 정의하지 않음
+// 대신, 코드에서 바로 바깥의 함수(혹은 class)의 this값이 사용됨
+// 따라서, 다음 코드에서 setInterval에 전달 된 함수의 this는 setInterval을 포함한 function의 this와 동일한 값을 가짐
+function Person() {
+  this.age = 0;
+  console.log(this);  // Person {age: 0}
+  setInterval(() => {
+    this.age++; // this는 Person 객체를 참조
+    console.log(this);  // Person {age: 1} ...... Person {age: n}
+  }, 1000)
+}
+
+var p = new Person();
+
+
+// 참고
+// https://poiemaweb.com/es6-arrow-function
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98
