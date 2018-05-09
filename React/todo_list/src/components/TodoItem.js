@@ -7,7 +7,7 @@ class TodoItem extends Component {
 	}
 
 	render() {
-		const { text, checked, id, onToggle, onRemove } = this.props;
+		const { text, checked, id, onToggle, onRemove, color } = this.props;
 
 		console.log(id);
 
@@ -18,7 +18,7 @@ class TodoItem extends Component {
 					onRemove(id)}
 				}>&times;</div>
 				<div className={`todo-text ${checked && 'checked'}`}>
-					<div>{text}</div>
+					<div style={{color}}>{text}</div>
 				</div>
 				{
 					checked && (<div className="check-mark">✓</div>)
