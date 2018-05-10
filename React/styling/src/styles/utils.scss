@@ -1,0 +1,19 @@
+// ~ 문자를 통해 node_modules 디렉토리에 접근
+@import '~open-color/open-color';
+@import '~include-media/dist/include-media';
+
+// 반응형 디자인 코드를 작성하게 될 때 사용
+$breakpoints: (
+  small: 376px, 
+  medium: 768px, 
+  large: 1024px, 
+  huge: 1200px
+);
+
+$size: 100px;
+
+@mixin place-at-center() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
