@@ -1,4 +1,4 @@
-## CSS Module / Sass/ styled-components
+## CSS Module / Sass / styled-components
 
 ### 참고
 
