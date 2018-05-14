@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <!-- animate.css -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <!-- jquery -->
+</head>
+<body class="container mt-5">
+  <h4>Form</h4>
+  <div class="input-group mt-3">
+    <input id="InputFontText" placeholder="Font_Text" class="form-control"></input>
+    <button id="BtnChangeFontText" class="btn btn-info">click</button>
+  </div>
+  <!-- Change Font_Text -->
+  <div class="input-group mt-3">
+    <input id="InputFontSize" placeholder="Font_Size" class="form-control"></input>
+    <button id="BtnChangeFontSize" class="btn btn-info">click</button>
+  </div>
+  <!-- Change Font_Size -->
+  <div class="input-group mt-3">
+    <input id="InputFontColor" placeholder="Font_Color" class="form-control"></input>
+    <button id="BtnChangeFontColor" class="btn btn-info">click</button>
+  </div>
+  <!-- Change Font_Color -->
+  <div class="input-group mt-3">
+    <input id="InputChangeCSS" placeholder="CSS (key : value)" class="form-control"></input>
+    <button id="BtnChangeCSS" class="btn btn-info">click</button>
+  </div>
+  <!-- Change CSS -->
+  <div class="mt-3">
+    <button id="BtnAnimate1" class="btn btn-info">bounce</button>
+    <button id="BtnAnimate2" class="btn btn-info">flash</button>
+    <button id="BtnAnimate3" class="btn btn-info">pulse</button>
+  </div>
+  <!-- Animate -->
+  <div class="mt-3" id="content">message</div>
+  <hr/>
+  <h4 class="mt-3">CSS List</h4>
+  <ul class="list-group" id="CSSList"></ul>
+  <script src="app.js"></script>
+</body>
+</html>
