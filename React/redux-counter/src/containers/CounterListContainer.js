@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getRandomColor } from '../utils';
 
 const mapStateToProps = (state) => ({
-  counters: state.counters
+  counters: state.get('counters')
 });
 
 const mapDispatchToProps = (dispatch) => ({
