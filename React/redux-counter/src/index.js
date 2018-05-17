@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 // Redux 관련 import
 import { createStore } from 'redux';
-import reducers from './reducers';
+import reducers from './modules';
 // Provider는 리액트 앱에 store를 손쉽게 연동 할 수 있도록 도와주는 컴포넌트
 import { Provider } from 'react-redux';
 
