@@ -85,12 +85,12 @@ function getCSSList() {
 
   for (i = 0; i < split.length - 1; i++) {
     $("#CSSList").append(
-      "<li class='list-group-item'>" +
-        "<div style='display : flex; align-items: center;'>" +
-          "<div>" + split[i] + "</div>" +
-          "<button class='btn btn-danger ml-auto'>삭제</button>" +
-        "</div>" +
-      "</li>"
+      `<li class="list-group-item">
+        <div style="display : flex; align-items: center;">
+          <div>${split[i]}</div>
+          <button class="btn btn-danger ml-auto">삭제</button>
+        </div>
+      </li>`
     )
   }
 }
